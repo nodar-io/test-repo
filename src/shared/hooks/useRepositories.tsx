@@ -48,7 +48,7 @@ export const useRepositories = () => {
         : null;
       getReposFx({ login: value, after: currentPage });
     }
-  }, [repositories.pageInfo.hasNextPage]);
+  }, [value]);
 
   const handlePageClick = (page: { selected: number }) => {
     const selectedPage = page.selected + 1;
@@ -57,6 +57,12 @@ export const useRepositories = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newLogin = e.target.value;
     setLoginValue(newLogin);
+    setCurrentPage(1);
+
+    if (loginValue === '') {
+      resetRepositories();
+      return;
+    }
   };
 
   return {

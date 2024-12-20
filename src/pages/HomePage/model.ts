@@ -1,8 +1,6 @@
 import { createEffect, createEvent, createStore, sample } from 'effector';
 import { getRepos } from '@/shared/api/repos';
 import { RepositoryConnection } from '@/shared/api/repos/model';
-import { chainRoute } from 'atomic-router';
-import { routes } from '@/shared/config/routes';
 
 export const getReposFx = createEffect(getRepos);
 
@@ -13,13 +11,13 @@ export const resetRepositories = createEvent();
 
 export const $currentPage = createStore<number>(
   Number(localStorage.getItem('currentPage')) || 1
-).on(setCurrentPage, (state, page) => {
+).on(setCurrentPage, (_, page) => {
   localStorage.setItem('currentPage', page.toString());
   return page;
 });
 export const $login = createStore<string>(localStorage.getItem('login') || '').on(
   setLogin,
-  (state, login) => {
+  (_, login) => {
     localStorage.setItem('login', login);
     return login;
   }
@@ -57,7 +55,7 @@ sample({
     login,
     after: currentPage > 1 ? endCursor : null
   }),
-  target: getReposFx
+  target: getReposFx,
+  filter: ({ currentPage }) => currentPage !== 0
 });
-getReposFx.use(({ login, after }) => getRepos({ login, after }));
-
+// getReposFx.use(({ login, after }) => getRepos({ login, after }));

@@ -18,6 +18,13 @@ export const HomePage = () => {
         placeholder='Введите имя пользователя GitHub'
       />
 
+      {repositories?.nodes?.length === 0 && loginValue === '' && (
+        <p>Введите логин, чтобы увидеть репозитории.</p>
+      )}
+      {repositories?.nodes?.length === 0 && loginValue !== '' && (
+        <p>Нет репозиториев для данного логина.</p>
+      )}
+
       <ul>
         {repositories?.nodes?.map((repo) => (
           <li key={repo.id} className={styles.repoItem}>
@@ -38,6 +45,7 @@ export const HomePage = () => {
           </li>
         ))}
       </ul>
+
       {repositories.nodes.length > 0 && (
         <Pagination
           currentPage={currentPage}
