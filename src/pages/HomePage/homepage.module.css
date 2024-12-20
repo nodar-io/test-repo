@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.repoName > span:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 255px;
+  height: 30px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input:focus {
+  border-color: rgba(153, 126, 77, 1); /* Цвет рамки при фокусе */
+  box-shadow: 0 0 5px rgba(153, 126, 77, 0.5); /* Добавляем тень для эффекта подсветки */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+li {
+  display: flex;
+  min-width: 200px;
+
+  min-width: 50px;
+
+  width: 80vw;
+  margin: 6px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+li:hover {
+  border-color: rgb(131, 108, 65);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(153, 122, 67);
+  flex-wrap: wrap;
+}
+
+a:hover {
+  text-decoration: underline;
+}

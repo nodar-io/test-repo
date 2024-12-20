@@ -1,0 +1,20 @@
+query User($owner: String!, $name: String!) {
+  repository(owner: $owner, name: $name) {
+    id
+    name
+    owner {
+      login
+      avatarUrl
+      url
+    }
+    stargazerCount
+    updatedAt
+    description
+    languages(first: 5) {
+      nodes {
+        color
+        name
+      }
+    }
+  }
+}

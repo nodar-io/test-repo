@@ -1,0 +1,64 @@
+.Pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  outline: transparent;
+  
+}
+
+.Pagination__page-item {
+  margin: 2px;
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+
+.Pagination__page-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: rgba(51, 51, 51, 1);
+  background-color: transparent;
+
+  border-radius: 4px;
+  outline: transparent;
+  cursor: pointer;
+}
+
+.Pagination__page-link:hover {
+  background-color: rgba(153, 126, 77, 1);
+  color: white;
+}
+
+.Pagination__active .Pagination__page-link {
+  background-color: rgba(176, 151, 106, 1);
+  border-color: rgba(176, 151, 106, 1);
+  color: white;
+}
+
+.Pagination__active .Pagination__page-link:hover,
+.Pagination__active .Pagination__page-link:focus {
+  background-color: rgba(176, 151, 106, 1);
+  border-color: rgba(176, 151, 106, 1);
+  outline: transparent;
+  cursor: default;
+}
+
+.disabled .Pagination__page-link {
+  cursor: default;
+}
+
+.disabled .Pagination__page-link svg {
+  fill: rgba(142, 142, 147, 1);
+}
+
+.disabled .Pagination__page-link:hover {
+  background-color: transparent;
+}
+
+.Pagination__dark .Pagination__page-link {
+  color: rgba(255, 255, 255, 1);
+}

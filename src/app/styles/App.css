@@ -1,0 +1,37 @@
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+input {
+  background: none; 
+  border: none; 
+  outline: none; 
+}
+.body-blur {
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+body > #root {
+  min-height: 100vh;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+}
+
+.root-blur {
+  overflow-x: clip;
+}
+
+* {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
